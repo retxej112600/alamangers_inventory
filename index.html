@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <title>Online Inventory Alamangers</title>
+    <style type="text/css">
+        * {
+            font-family: 'Gochi Hand', cursive;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav navbar bg-dark border border-bottom rounded fixed-top">
+        <div class="container text-white">
+            Online Inventory Alamangers
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th>Place of Delivery</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sweet and Spicy Alamang</td>
+                    <td>50</td>
+                    <td>1</td>
+                    <td>Cordon</td>
+                    <td id="firstSold"></td>
+                </tr>
+                <tr>
+                    <td>Sweet and Spicy Alamang</td>
+                    <td>50</td>
+                    <td>1</td>
+                    <td>Cordon</td>
+                    <td id="secondSold"></td>
+                </tr>
+                <tr>
+                    <td>Sweet and Spicy Alamang</td>
+                    <td>100(50 * 2)</td>
+                    <td>2</td>
+                    <td>Ramon</td>
+                    <td id="thirdSold"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container mt-5">
+        <h5><strong>Total Invested: </strong>PHP 182</h5>
+        <h5><strong>Total Product Made: </strong>10 pieces</h5>
+        <h5><strong>Total Product Sold: </strong>4 pieces</h5>
+        <h5><strong>Total Price: </strong>PHP 200</h5><br>
+
+        <ul>
+            <h4><strong>Return of investment: </strong></h4>
+            <li>
+                <h5>Total Price - Total Invested / Total Invested</h5>
+            </li>
+            <li>
+                <h5>200 - 182 / 182 = <strong id="eq"></strong></h5>
+            </li>
+            <li>
+                <h5>ROI: <strong id="result"></strong></h5>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+<script>
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const firstSold = new Date("March 12, 2022");
+    const secondSold = new Date("March 14, 2022");
+    const thirdSold = new Date("March 21, 2022");
+
+    document.querySelector("#firstSold").innerHTML = months[firstSold.getMonth()] + ' ' + firstSold.getDate() + ', ' + firstSold.getFullYear();
+    document.querySelector("#secondSold").innerHTML = months[secondSold.getMonth()] + ' ' + secondSold.getDate() + ', ' + secondSold.getFullYear();
+    document.querySelector("#thirdSold").innerHTML = months[thirdSold.getMonth()] + ' ' + thirdSold.getDate() + ', ' + thirdSold.getFullYear();
+
+    document.querySelector("#eq").innerHTML = Math.round((((200 - 182) / 182) * 100) * 100) / 100;
+    document.querySelector("#result").innerHTML = Math.round((((200 - 182) / 182) * 100) * 100) / 100 + "%";
+</script>
+
+</html>
