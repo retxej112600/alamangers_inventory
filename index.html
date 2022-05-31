@@ -55,34 +55,48 @@
                 </tr>
                 <tr>
                     <td>Sweet and Spicy Alamang</td>
+                    <td>50</td>
+                    <td>1</td>
+                    <td>Santiago</td>
+                    <td id="thirdSold"></td>
+                </tr>
+                <tr>
+                    <td>Sweet and Spicy Alamang</td>
                     <td>100(50 * 2)</td>
                     <td>2</td>
                     <td>Ramon</td>
-                    <td id="thirdSold"></td>
+                    <td id="fourthSold"></td>
                 </tr>
+
             </tbody>
         </table>
     </div>
-    <div class="container mt-5">
-        <h5><strong>Total Invested: </strong>PHP 182</h5>
-        <h5><strong>Total Product Made: </strong>10 pieces</h5>
-        <h5><strong>Total Product Sold: </strong>4 pieces</h5>
-        <h5><strong>Total Price: </strong>PHP 200</h5><br>
-
-        <ul>
-            <h4><strong>Return of investment: </strong></h4>
-            <li>
-                <h5>Total Price - Total Invested / Total Invested</h5>
-            </li>
-            <li>
-                <h5>200 - 182 / 182 = <strong id="eq"></strong></h5>
-            </li>
-            <li>
-                <h5>ROI: <strong id="result"></strong></h5>
-            </li>
-        </ul>
-
+    <div class="container mt-5 d-flex">
+        <div class="container col-6">
+            <h5><strong>Total Invested: </strong>PHP 182</h5>
+            <h5><strong>Total Products Made: </strong>10 pieces</h5>
+            <h5><strong>Total Products Sold: </strong>5 pieces</h5>
+            <h5><strong>Total Sold Products Price: </strong>PHP 250</h5><br>
+        </div>
+        <div class="container col-6">
+            <h5><strong>Revenue: </strong>182 + 68 = PHP 250</h5>
+            <h5><strong>Expenses: </strong>PHP 182</h5>
+            <h5><strong>Income: </strong>PHP 68</h5>
+            <h5><strong>Number of Products Sold: </strong>5 pieces</h5><br>
+        </div>
     </div>
+    <ul>
+        <h4><strong>Return of investment: </strong></h4>
+        <li>
+            <h5>Total Price - Total Invested / Total Invested</h5>
+        </li>
+        <li>
+            <h5>250 - 182 / 182 = <strong id="eq"></strong></h5>
+        </li>
+        <li>
+            <h5>ROI: <strong id="result"></strong></h5>
+        </li>
+    </ul>
 
 </body>
 <script>
@@ -91,13 +105,15 @@
     const firstSold = new Date("March 12, 2022");
     const secondSold = new Date("March 14, 2022");
     const thirdSold = new Date("March 21, 2022");
+    const fourthSold = new Date("May 31, 2022");
 
     document.querySelector("#firstSold").innerHTML = months[firstSold.getMonth()] + ' ' + firstSold.getDate() + ', ' + firstSold.getFullYear();
     document.querySelector("#secondSold").innerHTML = months[secondSold.getMonth()] + ' ' + secondSold.getDate() + ', ' + secondSold.getFullYear();
     document.querySelector("#thirdSold").innerHTML = months[thirdSold.getMonth()] + ' ' + thirdSold.getDate() + ', ' + thirdSold.getFullYear();
+    document.querySelector("#fourthSold").innerHTML = months[fourthSold.getMonth()] + ' ' + fourthSold.getDate() + ', ' + fourthSold.getFullYear();
 
-    document.querySelector("#eq").innerHTML = Math.round((((200 - 182) / 182) * 100) * 100) / 100;
-    document.querySelector("#result").innerHTML = Math.round((((200 - 182) / 182) * 100) * 100) / 100 + "%";
+    document.querySelector("#eq").innerHTML = Math.round((((250 - 182) / 182) * 100) * 100) / 100;
+    document.querySelector("#result").innerHTML = Math.round((((250 - 182) / 182) * 100) * 100) / 100 + "%";
 </script>
 
 </html>
