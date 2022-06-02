@@ -31,6 +31,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Status</th>
                     <th>Product Name</th>
                     <th>Product Price</th>
                     <th>Product Quantity</th>
@@ -40,34 +41,29 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Sweet and Spicy Alamang</td>
-                    <td>50</td>
-                    <td>1</td>
-                    <td>Cordon</td>
-                    <td id="firstSold"></td>
-                </tr>
-                <tr>
-                    <td>Sweet and Spicy Alamang</td>
-                    <td>50</td>
-                    <td>1</td>
-                    <td>Cordon</td>
-                    <td id="secondSold"></td>
-                </tr>
-                <tr>
+                    <td>Direct Sale</td>
                     <td>Sweet and Spicy Alamang</td>
                     <td>50</td>
                     <td>1</td>
                     <td>Santiago</td>
-                    <td id="thirdSold"></td>
+                    <td id="firstSold"></td>
                 </tr>
                 <tr>
+                    <td>Online Sale</td>
                     <td>Sweet and Spicy Alamang</td>
                     <td>100(50 * 2)</td>
                     <td>2</td>
                     <td>Ramon</td>
-                    <td id="fourthSold"></td>
+                    <td id="secondSold"></td>
                 </tr>
-
+                <tr>
+                    <td>Online Sale</td>
+                    <td>Sweet and Spicy Alamang</td>
+                    <td>180(50 * 3 + (shipping 30))</td>
+                    <td>3</td>
+                    <td>Cordon</td>
+                    <td id="thirdSold"></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -75,23 +71,23 @@
         <div class="container col-6">
             <h5><strong>Total Invested: </strong>PHP 182</h5>
             <h5><strong>Total Products Made: </strong>10 pieces</h5>
-            <h5><strong>Total Products Sold: </strong>5 pieces</h5>
-            <h5><strong>Total Sold Products Price: </strong>PHP 250</h5><br>
+            <h5><strong>Total Products Sold: </strong>6 pieces</h5>
+            <h5><strong>Total Sold Products Price: </strong>PHP 330</h5><br>
         </div>
         <div class="container col-6">
-            <h5><strong>Revenue: </strong>182 + 68 = PHP 250</h5>
+            <h5><strong>Revenue: </strong>PHP 330</h5>
             <h5><strong>Expenses: </strong>PHP 182</h5>
-            <h5><strong>Income: </strong>PHP 68</h5>
-            <h5><strong>Number of Products Sold: </strong>5 pieces</h5><br>
+            <h5><strong>Income: </strong>PHP 148</h5>
+            <h5><strong>Number of Products Sold: </strong>6 pieces</h5><br>
         </div>
     </div>
     <ul>
         <h4><strong>Return of investment: </strong></h4>
         <li>
-            <h5>Total Price - Total Invested / Total Invested</h5>
+            <h5>(Total Price - Total Invested / Total Invested) * 100</h5>
         </li>
         <li>
-            <h5>250 - 182 / 182 = <strong id="eq"></strong></h5>
+            <h5>(330 - 182 / 182) * 100 = <strong id="eq"></strong></h5>
         </li>
         <li>
             <h5>ROI: <strong id="result"></strong></h5>
@@ -102,18 +98,16 @@
 <script>
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    const firstSold = new Date("March 12, 2022");
-    const secondSold = new Date("March 14, 2022");
-    const thirdSold = new Date("March 21, 2022");
-    const fourthSold = new Date("May 31, 2022");
+    const firstSold = new Date("March 21, 2022");
+    const secondSold = new Date("May 31, 2022");
+    const thirdSold = new Date("June 1, 2022");
 
     document.querySelector("#firstSold").innerHTML = months[firstSold.getMonth()] + ' ' + firstSold.getDate() + ', ' + firstSold.getFullYear();
     document.querySelector("#secondSold").innerHTML = months[secondSold.getMonth()] + ' ' + secondSold.getDate() + ', ' + secondSold.getFullYear();
     document.querySelector("#thirdSold").innerHTML = months[thirdSold.getMonth()] + ' ' + thirdSold.getDate() + ', ' + thirdSold.getFullYear();
-    document.querySelector("#fourthSold").innerHTML = months[fourthSold.getMonth()] + ' ' + fourthSold.getDate() + ', ' + fourthSold.getFullYear();
 
-    document.querySelector("#eq").innerHTML = Math.round((((250 - 182) / 182) * 100) * 100) / 100;
-    document.querySelector("#result").innerHTML = Math.round((((250 - 182) / 182) * 100) * 100) / 100 + "%";
+    document.querySelector("#eq").innerHTML = Math.round((((330 - 182) / 182) * 100) * 100) / 100;
+    document.querySelector("#result").innerHTML = Math.round((((330 - 182) / 182) * 100) * 100) / 100 + "%";
 </script>
 
 </html>
